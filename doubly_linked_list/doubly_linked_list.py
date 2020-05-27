@@ -32,6 +32,9 @@ class ListNode:
         if self.next:
             self.next.prev = self.prev
 
+    def __str__(self):
+        return f'{self.value}'
+
 
 """Our doubly-linked list class. It holds references to
 the list's head and tail nodes."""
@@ -43,6 +46,31 @@ class DoublyLinkedList:
 
     def __len__(self):
         return self.length
+
+
+    def find_middle(self):
+        middle = self.head
+        end = self.head
+
+        while end != None and end.next.next != None:
+            end = end.next.next
+            middle = middle.next
+
+            print(middle)
+            return middle
+
+        
+    # Reverse the linked list
+    def reverse_list(self):
+        head = self.head
+        prev = head.prev
+        
+        while head != None:
+            curr = head
+            head = head.next
+            curr.next = prev
+            prev = curr
+        return prev
 
     """Wraps the given value in a ListNode and inserts it 
     as the new head of the list. Don't forget to handle 
@@ -65,6 +93,7 @@ class DoublyLinkedList:
         value = self.head.value
         self.delete(self.head)
         return value
+    
     """Wraps the given value in a ListNode and inserts it 
     as the new tail of the list. Don't forget to handle 
     the old tail node's next pointer accordingly."""
@@ -142,10 +171,27 @@ class DoublyLinkedList:
             current = current.next
         return curr_value
 
-new_node = ListNode(1)
-new_list = DoublyLinkedList(new_node)
+    def iterate_node(self):
+        total = 0
+        node = self.head
+        while node is not None:
+            total += 1
+            node = node.next
+            print(node.value)
+        return total
 
-new_list.add_to_tail(2)
-new_list.add_to_tail(8)
-new_list.add_to_tail(4)
-new_list.get_max()
+    # def __str__(self):
+    #     return f''
+
+# new_node = ListNode(1)
+# new_list = DoublyLinkedList(new_node)
+
+# new_list.add_to_tail(2)
+# new_list.add_to_tail(8)
+# new_list.add_to_tail(4)
+# # print(new_list, 'new list')
+# new_list.get_max()
+# # print(new_list.find_middle())
+# # print(new_list)
+# print(new_list.iterate_node())
+# print(new_list.reverse_list())
