@@ -67,13 +67,13 @@ class LinkedList:
     return False
 
   def remove_head(self):
-    value = self.head.value
+    # value = self.head.value
     if self.head.next:
       self.head = self.head.next
     else: 
       self.head = None
 
-    return value    
+    return self.head.value
 
   def get_max(self):
     current = self.head

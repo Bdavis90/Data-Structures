@@ -17,27 +17,27 @@ sys.path.append('../doubly_linked_list')
 from doubly_linked_list import DoublyLinkedList
 
 
-# # class Stack:
-# #     def __init__(self):
-# #         self.size = 0
-# #         self.storage = []
+class Stack:
+    def __init__(self):
+        self.size = 0
+        self.storage = []
 
-# #     def __len__(self):
-# #         return self.size
+    def __len__(self):
+        return self.size
 
-# #     def push(self, value):
-# #         self.size += 1
-# #         self.storage.append(value)
+    def push(self, value):
+        self.size += 1
+        self.storage.append(value)
 
-# #     def pop(self):
-# #         if self.size == 0:
-# #             return None
-# #         else:
-# #             self.size -= 1
-# #             return self.storage.pop()
+    def pop(self):
+        if self.size == 0:
+            return None
+        else:
+            self.size -= 1
+            return self.storage.pop()
 
-# #     def __str__(self):
-# #         return f'{self.storage}'
+    def __str__(self):
+        return f'{self.storage}'
 
 # class ListNode:
 #     def __init__(self, value, prev=None, next=None):
@@ -73,30 +73,30 @@ from doubly_linked_list import DoublyLinkedList
 #         return f'value: {self.value}'
     
 
-class Stack:
-    def __init__(self):
-        self.storage = DoublyLinkedList()
-        self.size = len(self.storage)
+# class Stack:
+#     def __init__(self):
+#         self.storage = DoublyLinkedList()
+#         self.size = len(self.storage)
         
 
-    def __len__(self):
-        return self.size
+#     def __len__(self):
+#         return self.size
 
-    def push(self, value):
-        self.size += 1
-        self.storage.add_to_tail(value)
+#     def push(self, value):
+#         self.size += 1
+#         self.storage.add_to_tail(value)
 
-    def pop(self):
-        if self.size == 0:
-            return None
-        self.size -= 1
+#     def pop(self):
+#         if self.size == 0:
+#             return None
+#         self.size -= 1
            
-        popped_value = self.storage.remove_from_tail()
+#         popped_value = self.storage.remove_from_tail()
 
-        return popped_value 
+#         return popped_value 
 
-    def __str__(self):
-        return f'{self.storage}' 
+#     def __str__(self):
+#         return f'{self.storage}' 
 
 
 s = Stack()
